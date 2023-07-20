@@ -7,11 +7,9 @@ import EditSVG from "../../assets/svg/editSVG";
 
 function Item({checked, text, index}) {
     const dispatch = useDispatch()
-
     const handleCheckedChange = () => {
         dispatch(editChecked(index))
     }
-
     const handleDelete = () => {
         dispatch(deleteItem(index))
     }

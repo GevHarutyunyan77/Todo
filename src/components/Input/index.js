@@ -21,7 +21,6 @@ function Input(props) {
                 dispatch(addToList({checked: false, text: inputValue}))
                 setInputValue('')
             }
-
         }
     }
     const handleKeyDown = (event) => {
@@ -43,9 +42,9 @@ function Input(props) {
     return (
         <div className='inputContainer'>
             {
-                editMode &&   <button onClick={handleCancel}>Cancel</button>
+                editMode &&   <button onClick={handleCancel}>Отменить</button>
             }
-            <input type={"text"} value={inputValue} onChange={handleTextChange} placeholder='Add a task'
+            <input type={"text"} value={inputValue} onChange={handleTextChange} placeholder='Добавить задачу'
                    onKeyDown={handleKeyDown}/>
             <button className='addBtn' onClick={handleClick}>{editMode? 'Изменить': 'Добавить'}</button>
         </div>
