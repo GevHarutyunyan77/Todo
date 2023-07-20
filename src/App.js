@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
 
+import {useSelector} from "react-redux";
+import Header from "./components/Header";
+import Item from "./components/Item";
+import {isEmpty, uniqueId} from "lodash";
+import {useMemo} from "react";
+
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const {todoList, dropDownActive} = useSelector(state => state.todoSlice)
+
+
+
+    const filteredData = useMemo(() => {
+        if (dropDownActive === '1') {
+            return todoList
+        } else if (dropDownActive === '2') {
+            return todoList.filter(i => i.checked === true)
+        } else {
+            return todoList.filter(i => i.checked === false)
+        }
+    }, [dropDownActive, todoList])
+
+
+    return (
+        <div className="App">
+            <Header/>
+            <div className='contentContainer'>
+                {!isEmpty(filteredData) && filteredData.map((i, index) => {
+                    return <Item {...i} key={uniqueId('item')} index={index}/>
+                })}
+            </div>
+        </div>
+    );
 }
 
 export default App;

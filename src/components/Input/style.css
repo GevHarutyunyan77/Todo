@@ -1,0 +1,25 @@
+.inputContainer {
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 610px;
+}
+
+.inputContainer> input {
+    width: 450px;
+    font-size: 16px;
+    padding-left: 10px;
+
+}
+
+.addBtn{
+    background-color: #024DD8;
+    color: white;
+    font-size: 16px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+}
+.inputContainer>button:hover{
+    cursor: pointer;
+}

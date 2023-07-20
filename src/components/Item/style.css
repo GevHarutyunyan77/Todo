@@ -1,0 +1,30 @@
+.container{
+    width: 400px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left:  10px;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: var(--content-color);
+}
+.text{
+   margin-left: 10px;
+    color: var(--color)
+}
+.bigContainer{
+    display: flex;
+    height: 100%;
+    width: 74px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.svgContainer{
+    height: 100%;
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+}
