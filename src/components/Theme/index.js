@@ -4,7 +4,7 @@ import { Radio } from 'antd';
 import {useTheme} from "../../hooks/use-theme";
 
 function Theme(props) {
-    const {setTheme} = useTheme()
+    const {theme,setTheme} = useTheme()
 
     const handleChange = (val)=>{
         setTheme(val)
@@ -12,7 +12,7 @@ function Theme(props) {
 
 
     return (
-        <Radio.Group defaultValue="light" size="large" onChange={(ev)=>handleChange(ev.target.value)}>
+        <Radio.Group defaultValue={theme} size="large" onChange={(ev)=>handleChange(ev.target.value)}>
             <Radio.Button value="light">Light</Radio.Button>
             <Radio.Button value="dark">Dark</Radio.Button>
         </Radio.Group>
